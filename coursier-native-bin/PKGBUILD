@@ -1,0 +1,19 @@
+# Adapted from https://aur.archlinux.org/packages/coursier/
+
+_version=2.0.0-RC5-3
+
+pkgname=coursier-native-bin
+pkgver="${_version//-/_}"
+pkgrel=1
+pkgdesc="Pure Scala Artifact Fetching - native precompiled binary"
+arch=('any')
+url="http://get-coursier.io"
+license=('Apache')
+
+source=("cs::https://github.com/coursier/coursier/releases/download/v${_version}/cs-x86_64-pc-linux")
+sha256sums=('dc15c78338ae19ab278c02650cde9d9587791ab532d6ce05f9ff632a0fbfd0ca')
+
+
+package() {
+  install -D -m755 "${srcdir}/cs" "${pkgdir}/usr/bin/cs"
+}
