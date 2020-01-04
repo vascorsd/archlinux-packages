@@ -1,6 +1,6 @@
 pkgname=bloop-simpler-bin
 pkgver=1.3.4
-pkgrel=1
+pkgrel=2
 pkgdesc="Bloop gives you fast edit/compile/test workflows for Scala."
 arch=(any)
 url="https://scalacenter.github.io/bloop/"
@@ -10,15 +10,15 @@ license=('Apache')
 depends=('java-environment>=8' 'coursier' 'python')
 
 
-_nailgunver=d7ed5db
+#_nailgunver=d7ed5db
 
 source=(
     "bloop-${pkgver}.tar.gz::https://github.com/scalacenter/bloop/archive/v$pkgver.tar.gz"
-    "nailgun-client::https://raw.githubusercontent.com/scalacenter/nailgun/${_nailgunver}/pynailgun/ng.py"
+    #"nailgun-client::https://raw.githubusercontent.com/scalacenter/nailgun/${_nailgunver}/pynailgun/ng.py"
 )
 sha256sums=(
     '0bb6815d22d2c94c15b2637d7cbf73b8b7df62c83a1c747ff29c55a3f6087dcd'
-    '0ae9887ba306b69be12c53885914b2efb4ec2f635ce25aa2f8f06e0b6a113253'
+    #'0ae9887ba306b69be12c53885914b2efb4ec2f635ce25aa2f8f06e0b6a113253'
 )
 
 build() {
@@ -36,6 +36,16 @@ build() {
     -r https://oss.sonatype.org/content/repositories/staging \
     -o blp-server -f --main bloop.Server
   
+  ## new thing.
+  # There's a new hidden nailgun thing or something in bloop itself, we can use that instead of
+  # the ugly python stuff.
+  
+  coursier-jvm bootstrap ch.epfl.scala:bloopgun_2.12:$pkgver \
+    -r bintray:scalameta/maven \
+    -r bintray:scalacenter/releases \
+    -r https://oss.sonatype.org/content/repositories/staging \
+    -o bloop --main bloop.bloopgun.Bloopgun
+    
   # fix paths
   cd "$srcdir/bloop-$pkgver"
   sed -i "s|__BLOOP_INSTALLATION_TARGET__|/usr/bin|g" etc/systemd/bloop.service
@@ -49,7 +59,7 @@ package() {
 
   ## binaries
   install -Dm755 blp-server "$pkgdir"/usr/bin/blp-server
-  install -Dm755 nailgun-client "$pkgdir"/usr/bin/bloop
+  install -Dm755 bloop "$pkgdir"/usr/bin/bloop
 
   cd "$srcdir/bloop-$pkgver"
   
