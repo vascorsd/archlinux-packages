@@ -1,0 +1,21 @@
+
+pkgname=seed
+pkgver=0.1.6
+pkgrel=1
+pkgdesc="scala user friendly build tool"
+arch=('any')
+url="https://tindzk.github.io/seed/"
+license=('Apache')
+depends=('java-environment=11')
+makedepends=('coursier')
+
+build() {
+  coursier bootstrap tindzk:seed_2.12:$pkgver \
+    -r bintray:tindzk/maven \
+    -f -o "${srcdir}/seed" \
+    --standalone
+}
+
+package() {
+  install -Dm755 "${srcdir}/seed" "${pkgdir}/usr/bin/seed"
+} 

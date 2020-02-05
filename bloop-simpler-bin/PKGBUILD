@@ -7,7 +7,8 @@ url="https://scalacenter.github.io/bloop/"
 provides=('bloop')
 conflicts=('bloop')
 license=('Apache')
-depends=('java-environment>=8' 'coursier' 'python')
+depends=('java-environment>=8' 'python')
+makedepends=('coursier')
 
 
 _nailgunver=d7ed5db
