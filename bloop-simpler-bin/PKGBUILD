@@ -1,6 +1,6 @@
 pkgname=bloop-simpler-bin
 pkgver=1.3.4
-pkgrel=1
+pkgrel=2
 pkgdesc="Bloop gives you fast edit/compile/test workflows for Scala."
 arch=(any)
 url="https://scalacenter.github.io/bloop/"
