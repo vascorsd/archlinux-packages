@@ -1,0 +1,21 @@
+pkgname=scalafix-bin
+pkgver=0.9.11
+pkgrel=1
+pkgdesc="Refactoring and linting tool for Scala"
+arch=('any')
+url="https://scalacenter.github.io/scalafix"
+license=('BSD3')
+depends=('java-environment>=8')
+makedepends=('coursier')
+
+build() {
+  coursier \
+    bootstrap ch.epfl.scala:scalafix-cli_2.12.10:$pkgver \
+    -f --main "scalafix.cli.Cli" \
+    -o "${srcdir}/scalafix" \
+    --standalone
+}
+
+package() {
+  install -Dm755 "${srcdir}/scalafix" "${pkgdir}/usr/bin/scalafix"
+} 
