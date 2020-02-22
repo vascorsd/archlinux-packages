@@ -1,15 +1,26 @@
-pkgname=scalafmt-native-bin
-pkgver=2.3.2
-pkgrel=2
+pkgname=scalafmt-native
+pkgver=2.4.1
+pkgrel=1
 pkgdesc="code formatter for the Scala programming language. (native pre-compiled binary)"
 arch=("x86_64")
 url="https://scalameta.org/scalafmt/"
 license=('Apache')
 provides=('scalafmt')
 conflicts=('scalafmt')
-source=("https://github.com/scalameta/scalafmt/releases/download/v${pkgver}/scalafmt-linux.zip")
-sha256sums=('a0c0a57543a21243e38bde648e83fb3833ffd55fe8c056d8e8b7b5ab1724fa43')
+depends=('sbt' 'native-image-jdk11-bin')
+source=("https://github.com/scalameta/scalafmt/archive/v${pkgver}.tar.gz")
+sha256sums=('da86c900b547ae453819b5038903c6f1afdfb9c18ed32e04cc7bd1bca0dc0f39')
+
+build() {
+  cd "${srcdir}/scalafmt-${pkgver}"
+  
+  env CI=maybe \
+      PATH=/usr/lib/jvm/java-11-graalvm/bin:$PATH \
+    sbt cli/graalvm-native-image:packageBin
+}
 
 package() {
-  install -Dm755 "${srcdir}/scalafmt-linux/scalafmt" "${pkgdir}/usr/bin/scalafmt"
+  cd "${srcdir}/scalafmt-${pkgver}"
+  
+  install -Dm755 "scalafmt-cli/target/graalvm-native-image/cli" "${pkgdir}/usr/bin/scalafmt"
 } 
