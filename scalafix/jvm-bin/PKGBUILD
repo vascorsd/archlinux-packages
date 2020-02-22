@@ -1,7 +1,7 @@
-pkgname=scalafix-bin
+pkgname=scalafix-jvm-bin
 pkgver=0.9.11
 pkgrel=1
-pkgdesc="Refactoring and linting tool for Scala"
+pkgdesc="Refactoring and linting tool for Scala. (jvm launcher version)"
 arch=('any')
 url="https://scalacenter.github.io/scalafix"
 license=('BSD3')
@@ -17,5 +17,5 @@ build() {
 }
 
 package() {
-  install -Dm755 "${srcdir}/scalafix" "${pkgdir}/usr/bin/scalafix"
+  install -Dm755 "${srcdir}/scalafix" "${pkgdir}/usr/bin/scalafix-jvm"
 } 

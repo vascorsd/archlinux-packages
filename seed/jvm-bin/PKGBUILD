@@ -1,7 +1,7 @@
-pkgname=seed-bin
+pkgname=seed-jvm-bin
 pkgver=0.1.6
-pkgrel=1
-pkgdesc="scala user friendly build tool"
+pkgrel=2
+pkgdesc="scala user friendly build tool. (jvm launcher version)"
 arch=('any')
 url="https://tindzk.github.io/seed/"
 license=('Apache')
@@ -16,5 +16,5 @@ build() {
 }
 
 package() {
-  install -Dm755 "${srcdir}/seed" "${pkgdir}/usr/bin/seed"
+  install -Dm755 "${srcdir}/seed" "${pkgdir}/usr/bin/seed-jvm"
 } 

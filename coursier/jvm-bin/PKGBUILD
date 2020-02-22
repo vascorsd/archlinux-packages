@@ -2,7 +2,7 @@
 
 _version=2.0.0-RC6-10
 
-pkgname=coursier-jvm
+pkgname=coursier-jvm-bin
 pkgver="${_version//-/_}"
 pkgrel=1
 pkgdesc="Pure Scala Artifact Fetching. (jvm launcher version)"
