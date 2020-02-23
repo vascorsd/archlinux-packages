@@ -1,11 +1,12 @@
 pkgname=seed-jvm-bin
 pkgver=0.1.6
-pkgrel=2
+pkgrel=3
 pkgdesc="scala user friendly build tool. (jvm launcher version)"
 arch=('any')
 url="https://tindzk.github.io/seed/"
 license=('Apache')
-depends=('java-environment>=8')
+depends=('java-environment>=8' 'llvm' 'clang')
+optdepends=('gc: use boehm garbage collector instead of default immix')
 makedepends=('coursier')
 
 build() {
