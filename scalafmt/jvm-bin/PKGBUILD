@@ -1,5 +1,7 @@
+# Adapated from https://aur.archlinux.org/packages/scalafmt/
+
 pkgname=scalafmt-jvm-bin
-pkgver=2.4.1
+pkgver=2.4.2
 pkgrel=1
 pkgdesc="code formatter for the Scala programming language. (jvm launcher version)"
 arch=('any')

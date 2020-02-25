@@ -1,5 +1,5 @@
 pkgname=scalafmt-native
-pkgver=2.4.1
+pkgver=2.4.2
 pkgrel=1
 pkgdesc="code formatter for the Scala programming language. (native binary)"
 arch=("x86_64")
@@ -9,7 +9,7 @@ provides=('scalafmt')
 conflicts=('scalafmt')
 depends=('sbt' 'native-image-jdk11-bin')
 source=("https://github.com/scalameta/scalafmt/archive/v${pkgver}.tar.gz")
-sha256sums=('da86c900b547ae453819b5038903c6f1afdfb9c18ed32e04cc7bd1bca0dc0f39')
+sha256sums=('ca26ec757f5284b8d1c1b905af94e66c5229df5445cf936440767a3be5f57c3f')
 
 build() {
   cd "${srcdir}/scalafmt-${pkgver}"
