@@ -12,7 +12,7 @@ license=('Apache')
 provides=('coursier')
 conflicts=('coursier')
 source=("cs::https://github.com/coursier/coursier/releases/download/v${_version}/cs-x86_64-pc-linux")
-sha256sums=('a2746d3bb954c640d4da8869dc5d915b655e8cecfec31994e3ac133515a9597e')
+sha256sums=('2b0c1995b622b7c8a35d18f9f48e6c3b0210403e327e1c30b2b5089ed3b2448d')
 
 
 package() {
