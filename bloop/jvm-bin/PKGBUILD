@@ -1,6 +1,8 @@
+_version=1.4.0-RC1
+
 pkgname=bloop-jvm-bin
-pkgver=1.3.4
-pkgrel=2
+pkgver="${_version//-/_}"
+pkgrel=1
 pkgdesc="Bloop gives you fast edit/compile/test workflows for Scala. (jvm launcher version)"
 arch=(any)
 url="https://scalacenter.github.io/bloop/"
@@ -11,15 +13,15 @@ depends=('java-environment>=8' 'python')
 makedepends=('coursier')
 
 
-_nailgunver=d7ed5db
+_nailgunver=a2520c1e
 
 source=(
-    "bloop-${pkgver}.tar.gz::https://github.com/scalacenter/bloop/archive/v$pkgver.tar.gz"
+    "bloop-${pkgver}.tar.gz::https://github.com/scalacenter/bloop/archive/v${_version}.tar.gz"
     "nailgun-client::https://raw.githubusercontent.com/scalacenter/nailgun/${_nailgunver}/pynailgun/ng.py"
 )
 sha256sums=(
-    '0bb6815d22d2c94c15b2637d7cbf73b8b7df62c83a1c747ff29c55a3f6087dcd'
-    '0ae9887ba306b69be12c53885914b2efb4ec2f635ce25aa2f8f06e0b6a113253'
+    'cafe235734d2bb3ab34257fa48b902cbe126e677439f6e76c0c6be85747fe945'
+    '66e22177333477d32204317f12a90e37f80ec24d5b7fbfbddddc16b27df797a9'
 )
 
 build() {
@@ -31,14 +33,14 @@ build() {
   # the server we generate with a magic incantation of the coursier that embeds 
   # a magically bootstrapable binary or something like that. if not is close.
   
-  coursier bootstrap ch.epfl.scala:bloop-frontend_2.12:$pkgver \
+  coursier bootstrap ch.epfl.scala:bloop-frontend_2.12:${_version} \
     -r bintray:scalameta/maven \
     -r bintray:scalacenter/releases \
     -r https://oss.sonatype.org/content/repositories/staging \
     -o blp-server -f --main bloop.Server
   
   # fix paths
-  cd "$srcdir/bloop-$pkgver"
+  cd "$srcdir/bloop-${_version}"
   sed -i "s|__BLOOP_INSTALLATION_TARGET__|/usr/bin|g" etc/systemd/bloop.service
 
   sed -i "s|__BLOOP_INSTALLATION_TARGET__/xdg|/usr/share/pixmaps|g" etc/xdg/bloop.desktop
@@ -52,7 +54,7 @@ package() {
   install -Dm755 blp-server "$pkgdir"/usr/bin/blp-server
   install -Dm755 nailgun-client "$pkgdir"/usr/bin/bloop
 
-  cd "$srcdir/bloop-$pkgver"
+  cd "$srcdir/bloop-${_version}"
   
   # desktop file
   install -Dm644 etc/xdg/bloop.png "$pkgdir"/usr/share/pixmaps/bloop.png
