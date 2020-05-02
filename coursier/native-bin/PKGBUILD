@@ -1,6 +1,6 @@
 # Adapted from https://aur.archlinux.org/packages/coursier/
 
-_version=2.0.0-RC6-10
+_version=2.0.0-RC6-13
 
 pkgname=coursier-native-bin
 pkgver="${_version//-/_}"
