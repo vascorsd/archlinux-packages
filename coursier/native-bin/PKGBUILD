@@ -1,6 +1,6 @@
 # Adapted from https://aur.archlinux.org/packages/coursier/
 
-_version=2.0.0-RC6-13
+_version=2.0.0-RC6-18
 
 pkgname=coursier-native-bin
 pkgver="${_version//-/_}"
@@ -12,7 +12,7 @@ license=('Apache')
 provides=('coursier')
 conflicts=('coursier')
 source=("cs::https://github.com/coursier/coursier/releases/download/v${_version}/cs-x86_64-pc-linux")
-sha256sums=('2b0c1995b622b7c8a35d18f9f48e6c3b0210403e327e1c30b2b5089ed3b2448d')
+sha256sums=('e3e54536db519c89521e95234294b3e6c6b74a1178560b94d4d3bcc54f4c9f70')
 
 
 package() {
