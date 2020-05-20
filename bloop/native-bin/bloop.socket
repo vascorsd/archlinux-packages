@@ -1,0 +1,8 @@
+[Unit] 
+Description = Bloop Scala build server
+
+[Socket] 
+ListenStream = 8212
+
+[Install] 
+WantedBy = sockets.target

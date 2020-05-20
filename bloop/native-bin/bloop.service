@@ -1,0 +1,14 @@
+[Unit]
+Description=Bloop Scala build server
+Requires=bloop.socket
+
+[Service]
+ExecStart=/usr/bin/bloop server
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=bloop
+Restart=on-failure
+
+[Install]
+Also=bloop.socket
+WantedBy=default.target
