@@ -1,4 +1,4 @@
-_version=1.4.1
+_version=1.4.3
 
 pkgname=bloop-native-bin
 pkgver="${_version//-/_}"
@@ -29,7 +29,7 @@ source=(
     #"bloop.socket"
 )
 sha256sums=(
-    '68e7b8fda9e763c0c14e87b6ec11dd8d70448ca0fc7c3aaeb52187f87cdc91af'
+    '2ec43503096e71d54b2ff20da42b22aaf3e11212a3926ddcecbe26534e86c331'
 
     'da6b7ecd4109bd0ff98b1c452d9dd9d26eee0d28ff604f6c83fb8d3236a6bdd1'
     'a012a5cc76b57dbce17fad237f3b97bea6946ffc6ea0b61ac2281141038248dd'
@@ -38,7 +38,7 @@ sha256sums=(
     '4aab103b8e8b5d6e95c9f5721dbc6038f64457f39b079cb0d91efa0476c889b4'
     '53d945f692f5f5e9e64793f8b1926c3731bac365041ce514dec13d89376c1e6a'
     
-    'SKIP'
+    'cbd783c5037ce08b197ff8334c2ad4366be0624dbe9cf2da41ef1832f5628b66'
 )
 
 build() {
