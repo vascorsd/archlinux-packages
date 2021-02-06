@@ -30,8 +30,8 @@ version and the jvm-bin version and correspondly the system binaries are 'coursi
 
 Available tools right now:
 
-  * bloop - jvm-bin
   * coursier - jvm-bin | native-bin
+  * bloop    - jvm-bin
   * scalafix - jvm-bin
   * scalafmt - jvm-bin | native
-  * seed - jvm-bin
+  * seed     - jvm-bin | jvm-bin-git
