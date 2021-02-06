@@ -1,6 +1,8 @@
-pkgname=seed-jvm-bin
-pkgver=0.1.7
-pkgrel=2
+_version=0.1.7-19-g04dd990
+
+pkgname=seed-jvm-bin-git
+pkgver="${_version//-/_}"
+pkgrel=1
 pkgdesc="scala user friendly build tool. (jvm launcher version)"
 arch=('any')
 url="https://tindzk.github.io/seed/"
@@ -12,7 +14,7 @@ optdepends=('gc: use boehm garbage collector instead of default immix')
 makedepends=('coursier')
 
 build() {
-  coursier bootstrap tindzk:seed_2.12:$pkgver \
+  coursier bootstrap tindzk:seed_2.12:${_version} \
     -r bintray:tindzk/maven \
     -f -o "${srcdir}/seed" \
     --standalone
