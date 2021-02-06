@@ -1,17 +1,24 @@
-# Adapted from https://aur.archlinux.org/packages/coursier/
-
-_version=2.0.0-RC6-18
-
 pkgname=coursier-jvm-bin
-pkgver="${_version//-/_}"
+pkgver=2.0.9
 pkgrel=1
 pkgdesc="Pure Scala Artifact Fetching. (jvm launcher version)"
 arch=('any')
 url="http://get-coursier.io"
 license=('Apache')
 depends=('java-environment>=8' 'bash')
-source=("builder::https://github.com/coursier/coursier/releases/download/v${_version}/coursier")
-sha256sums=('c26e66034792464bb82a8f0f5060e69e9fc0f9380eee2f7ca1e801eb5d4ad56f')
+source=(
+    "builder::https://github.com/coursier/coursier/releases/download/v${pkgver}/coursier"
+    "builder.asc::https://github.com/coursier/coursier/releases/download/v${pkgver}/coursier.asc"
+)
+sha256sums=(
+    '8ea4aff5504ba2d97a6155a058dce7bd34e144888c512b50d166cdeaed356f57'
+    'e2ebff9de2cb95defd3315339d2ce297c14202508698512ee84f7a447da9ed1d'
+)
+# https://keyserver.ubuntu.com/pks/lookup?search=0x8011fd49dc1749cd64137af3cd1b9d8dc84eca56&fingerprint=on&exact=on&op=index
+# gpg --keyserver keyserver.ubuntu.com --receive-keys 8011fd49dc1749cd64137af3cd1b9d8dc84eca56
+validpgpkeys=(
+  '8011FD49DC1749CD64137AF3CD1B9D8DC84ECA56'  # Alexandre Archambault ( Travis CI coursier )
+)
 noextract=("builder")
 
 build() {
@@ -20,7 +27,7 @@ build() {
   export COURSIER_CACHE="${srcdir}/cache"
   
   sh ./builder bootstrap \
-    "io.get-coursier::coursier-cli:${_version}" \
+    "io.get-coursier::coursier-cli:${pkgver}" \
     --java-opt "-noverify" \
     --no-default \
     -r central \
