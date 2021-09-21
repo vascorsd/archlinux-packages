@@ -1,0 +1,27 @@
+
+
+pkgname=metals-jvm-bin
+pkgver=0.10.7
+pkgrel=1
+pkgdesc="Scala language server with rich IDE features. (jvm launcher version)"
+arch=('any')
+url="https://scalameta.org/metals/"
+license=('Apache')
+depends=('java-environment>=8')
+makedepends=('coursier')
+
+build() {
+  coursier \
+    bootstrap \
+    --java-opt -Xss4m \
+    --java-opt -Xms100m \
+    org.scalameta:metals_2.12:$pkgver \
+    -r bintray:scalacenter/releases \
+    -f \
+    -o "${srcdir}/metals" \
+    --standalone
+}
+
+package() {
+  install -Dm755 "${srcdir}/metals" "${pkgdir}/usr/bin/metals-jvm"
+}
