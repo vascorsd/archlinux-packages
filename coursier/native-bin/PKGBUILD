@@ -1,5 +1,5 @@
 pkgname=coursier-native-bin
-pkgver=2.0.9
+pkgver=2.0.16
 pkgrel=1
 pkgdesc="Pure Scala Artifact Fetching. (native pre-compiled binary)"
 arch=("x86_64")
@@ -8,12 +8,12 @@ license=('Apache')
 provides=('coursier')
 conflicts=('coursier')
 source=(
-    "cs::https://github.com/coursier/coursier/releases/download/v${pkgver}/cs-amd64-pc-linux"
-    "cs.asc::https://github.com/coursier/coursier/releases/download/v${pkgver}/cs-amd64-pc-linux.asc"
+    "cs::https://github.com/coursier/coursier/releases/download/v${pkgver}/cs-${arch}-pc-linux"
+    "cs.asc::https://github.com/coursier/coursier/releases/download/v${pkgver}/cs-${arch}-pc-linux.asc"
 )
 sha256sums=(
-    'cc3e731cc6f3ab75ba82abe5ca7809cc22ba59a7cc887133a3e9f4970d8550b2'
-    '28a23ee255ba25e299836576b472a60b300dfc3c5c03d97b3c0ed0e4d0e5d103'
+    'f8bfa6de98a864189f5a5799886d1295dd02b92e64bf10f194670538b9955016'
+    '5411610d7def621c874285034eaa8a4e076f53f3608bcb442307595c34e27959'
 )
 # https://keyserver.ubuntu.com/pks/lookup?search=0x8011fd49dc1749cd64137af3cd1b9d8dc84eca56&fingerprint=on&exact=on&op=index
 # gpg --keyserver keyserver.ubuntu.com --receive-keys 8011fd49dc1749cd64137af3cd1b9d8dc84eca56
