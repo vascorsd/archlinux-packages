@@ -1,16 +1,15 @@
 pkgname=bloop-native-bin
-pkgver=1.4.6
+pkgver=1.4.9
 pkgrel=1
-pkgdesc="Bloop gives you fast edit/compile/test workflows for Scala. (native launcher version)"
-arch=(any)
+pkgdesc="Bloop gives you fast edit/compile/test workflows for Scala. (native pre-compiled binary)"
+arch=("x86_64")
 url="https://scalacenter.github.io/bloop/"
 provides=('bloop')
 conflicts=('bloop')
 license=('Apache')
-depends=('java-environment>=8')
 
 source=(
-    "bloop::https://github.com/scalacenter/bloop/releases/download/v${pkgver}/bloop-x86_64-pc-linux"
+    "bloop::https://github.com/scalacenter/bloop/releases/download/v${pkgver}/bloop-${arch}-pc-linux"
 
     # shells completions
     "https://github.com/scalacenter/bloop/releases/download/v${pkgver}/bash-completions"
@@ -27,7 +26,7 @@ source=(
     #"bloop.socket"
 )
 sha256sums=(
-    'a75d11fbd9007f254af590237c82fb78b42812a4c7541620808a4c1bb8bdfa84'
+    'ca109ba387c1dee57685dad59d7d08cd525d1c9b5099d08dd1dff9475d41cdda'
 
     'da6b7ecd4109bd0ff98b1c452d9dd9d26eee0d28ff604f6c83fb8d3236a6bdd1'
     'a012a5cc76b57dbce17fad237f3b97bea6946ffc6ea0b61ac2281141038248dd'
