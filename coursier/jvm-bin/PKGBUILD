@@ -1,5 +1,5 @@
 pkgname=coursier-jvm-bin
-pkgver=2.0.9
+pkgver=2.0.16
 pkgrel=1
 pkgdesc="Pure Scala Artifact Fetching. (jvm launcher version)"
 arch=('any')
@@ -11,8 +11,8 @@ source=(
     "builder.asc::https://github.com/coursier/coursier/releases/download/v${pkgver}/coursier.asc"
 )
 sha256sums=(
-    '8ea4aff5504ba2d97a6155a058dce7bd34e144888c512b50d166cdeaed356f57'
-    'e2ebff9de2cb95defd3315339d2ce297c14202508698512ee84f7a447da9ed1d'
+    '631e8fbc1a3beb71a7130539b3b01852cfbe02edb94c5e9c6785981a0aee1e9c'
+    'd4d287b7c680db35e4b497f5b204e2b321474f8ae1aa73ff657e68d934fa859b'
 )
 # https://keyserver.ubuntu.com/pks/lookup?search=0x8011fd49dc1749cd64137af3cd1b9d8dc84eca56&fingerprint=on&exact=on&op=index
 # gpg --keyserver keyserver.ubuntu.com --receive-keys 8011fd49dc1749cd64137af3cd1b9d8dc84eca56
