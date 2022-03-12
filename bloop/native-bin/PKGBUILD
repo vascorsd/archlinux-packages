@@ -1,5 +1,5 @@
 pkgname=bloop-native-bin
-pkgver=1.4.9
+pkgver=1.4.13
 pkgrel=1
 pkgdesc="Bloop gives you fast edit/compile/test workflows for Scala. (native pre-compiled binary)"
 arch=("x86_64")
@@ -9,6 +9,7 @@ conflicts=('bloop')
 license=('Apache')
 
 source=(
+    # native architecture binary
     "bloop::https://github.com/scalacenter/bloop/releases/download/v${pkgver}/bloop-${arch}-pc-linux"
 
     # shells completions
@@ -17,35 +18,22 @@ source=(
     "https://github.com/scalacenter/bloop/releases/download/v${pkgver}/zsh-completions"
 
     # static resources, not in release assets but in git repo
-    "https://raw.githubusercontent.com/scalacenter/bloop/v${pkgver}/etc/xdg/bloop.desktop"
-    "https://raw.githubusercontent.com/scalacenter/bloop/v${pkgver}/etc/xdg/bloop.png"
-    
-    "https://raw.githubusercontent.com/scalacenter/bloop/v${pkgver}/etc/systemd/bloop.service"
-    #"bloop.service"
-    # NOTE: not possible to used socket activation without the app itself being prepared for it.
-    #"bloop.socket"
+    #"https://raw.githubusercontent.com/scalacenter/bloop/v${pkgver}/etc/systemd/bloop.service"
+    # moved to be inline here
+    "bloop.service"
 )
-sha256sums=(
-    'ca109ba387c1dee57685dad59d7d08cd525d1c9b5099d08dd1dff9475d41cdda'
+sha256sums=('53927d41d1a255d2419f32ebee2b0ee21295ee5257b69b37002db54fb62c5da8'
 
-    'da6b7ecd4109bd0ff98b1c452d9dd9d26eee0d28ff604f6c83fb8d3236a6bdd1'
-    'a012a5cc76b57dbce17fad237f3b97bea6946ffc6ea0b61ac2281141038248dd'
-    '58d32c3f005f7791237916d1b5cd3a942115236155a0b7eba8bf36391d06eff7'
+            'da6b7ecd4109bd0ff98b1c452d9dd9d26eee0d28ff604f6c83fb8d3236a6bdd1'
+            '78511247a88f1d10d5886bfe164dec0af3e0540864d8bd60086e0b9df5cefefe'
+            '58d32c3f005f7791237916d1b5cd3a942115236155a0b7eba8bf36391d06eff7'
 
-    '4aab103b8e8b5d6e95c9f5721dbc6038f64457f39b079cb0d91efa0476c889b4'
-    '53d945f692f5f5e9e64793f8b1926c3731bac365041ce514dec13d89376c1e6a'
-    
-    'e9713d6a04716f0a71fc6b7f66b00b49055c0b69a3edfd7b203869aacbf80f53'
-)
+            'e9713d6a04716f0a71fc6b7f66b00b49055c0b69a3edfd7b203869aacbf80f53')
 
-build() {
-  cd "$srcdir"
 
+prepare() {
   # fix paths
   sed -i "s|__BLOOP_INSTALLATION_TARGET__|/usr/bin|g" bloop.service
-
-  sed -i "s|__BLOOP_INSTALLATION_TARGET__/xdg|/usr/share/pixmaps|g" bloop.desktop
-  sed -i "s|__BLOOP_INSTALLATION_TARGET__|/usr/bin|g" bloop.desktop
 }
 
 package() {
@@ -59,11 +47,6 @@ package() {
   install -Dm644 zsh-completions "$pkgdir"/usr/share/zsh/site-functions/_bloop
   install -Dm644 fish-completions "$pkgdir"/usr/share/fish/vendor_completions.d/bloop.fish
 
-  # desktop file
-  install -Dm644 bloop.png "$pkgdir"/usr/share/pixmaps/bloop.png
-  install -Dm644 bloop.desktop "$pkgdir"/usr/share/applications/bloop.desktop
-
   # systemd service
   install -Dm644 bloop.service "$pkgdir"/usr/lib/systemd/user/bloop.service
-  #install -Dm644 bloop.socket "$pkgdir"/usr/lib/systemd/user/bloop.socket
 }
