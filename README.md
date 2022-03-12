@@ -4,7 +4,7 @@ Here be some end user tools / binaries used in scala ecosystem
 packaged in a way I like for usage in archlinux.
 
 
-## why not use other already provided packages" ?
+## why not use other already provided packages ?
 
 I'm weirdo and don't like what I see on other places.
 I want a clear distinction between jvm based binary "tools" / "launchers"
@@ -29,7 +29,9 @@ for the jvm, there comes the need to distinguish which version is being
 packaged here.
 
 I'm following the pattern of adding "-bin" to prebuilt binaries.
+
 **Native pre built binaries** follow the "tool-bin" naming.
+
 **Jvm prebuild binaries / classes / released** on maven or wtv and being
 wrapped in a launcher using coursier follow the pattern "tool-jvm-bin".
 
@@ -71,11 +73,11 @@ But they may be a good base for others to edit for their usages.
 ## available matrix
 
 
-|          |  jvm-bin (git, source)   |  native-bin (git, source)  |
-| -------- | ----------  ------------ | -------------------------- |
+|   tool   |  jvm-bin (git, source)   |  native-bin (git, source)  |
+| -------- | ------------------------ | -------------------------- |
 | coursier |     ✅ (❌, ❌)          |      ✅ (❌, ❌)           |
 | bloop    |     ❌ (❌, ❌)          |      ✅ (❌, ❌)           |
-| scalafmt |     ✅ (❌, ❌)          |      ✅ (❌, ✅)           |
+| scalafmt |     ✅ (❌, ❌)          |      ✅ (❌, ❌)           |
 | scalafix |     ✅ (❌, ❌)          |      ❌ (❌, ❌)           |
 | metals   |     ✅ (❌, ❌)          |      ❌ (❌, ❌)           |
 | seed     |     ✅ (✅, ❌)          |      ❌ (❌, ❌)           |
