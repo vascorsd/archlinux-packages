@@ -1,15 +1,15 @@
 pkgname=scalafmt-native-bin
 pkgver=3.4.3
-pkgrel=1
+pkgrel=2
 pkgdesc="code formatter for the Scala programming language. (native pre-compiled binary)"
 arch=("x86_64")
 url="https://scalameta.org/scalafmt/"
 license=('Apache')
 provides=('scalafmt')
 conflicts=('scalafmt')
-source=("https://github.com/scalameta/scalafmt/releases/download/v${pkgver}/scalafmt-linux-glibc")
-sha256sums=('3faec034fbbea393f9dcb23c4134d30e1d855abada52a37dc141045af70b36a7')
+source=("https://github.com/scalameta/scalafmt/releases/download/v${pkgver}/scalafmt-linux-musl")
+sha256sums=('b0292ea872093b6704ed4b2e29ee2cd789bb0e1b27020588280bf5875f5015c7')
 
 package() {
-  install -D -m755 "${srcdir}/scalafmt-linux-glibc" "${pkgdir}/usr/bin/scalafmt"
+  install -D -m755 "${srcdir}/scalafmt-linux-musl" "${pkgdir}/usr/bin/scalafmt"
 }
