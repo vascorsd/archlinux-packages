@@ -73,11 +73,12 @@ But they may be a good base for others to edit for their usages.
 ## available matrix
 
 
-|   tool   |  jvm-bin (git, source)   |  native-bin (git, source)  |
-| -------- | ------------------------ | -------------------------- |
-| coursier |     ✅ (❌, ❌)          |      ✅ (❌, ❌)           |
-| bloop    |     ❌ (❌, ❌)          |      ✅ (❌, ❌)           |
-| scalafmt |     ✅ (❌, ❌)          |      ✅ (❌, ❌)           |
-| scalafix |     ✅ (❌, ❌)          |      ❌ (❌, ❌)           |
-| metals   |     ✅ (❌, ❌)          |      ❌ (❌, ❌)           |
-| seed     |     ✅ (✅, ❌)          |      ❌ (❌, ❌)           |
+|   tool     |  jvm-bin (git, source)   |  native-bin (git, source)  |
+| ---------- | ------------------------ | -------------------------- |
+| coursier   |     ✅ (❌, ❌)          |      ✅ (❌, ❌)           |
+| bloop      |     ❌ (❌, ❌)          |      ✅ (❌, ❌)           |
+| scalafmt   |     ✅ (❌, ❌)          |      ✅ (❌, ❌)           |
+| scalafix   |     ✅ (❌, ❌)          |      ❌ (❌, ❌)           |
+| metals     |     ✅ (❌, ❌)          |      ❌ (❌, ❌)           |
+| seed       |     ✅ (✅, ❌)          |      ❌ (❌, ❌)           |
+| scala-cli  |     ❌ (❌, ❌)          |      ✅ (❌, ❌)           |
