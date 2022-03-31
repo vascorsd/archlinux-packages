@@ -1,6 +1,6 @@
 pkgname=scala-cli
 pkgver=0.1.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Scala CLI is a command-line tool to interact with the Scala language.'
 arch=('x86_64')
 url='https://scala-cli.virtuslab.org'
@@ -8,6 +8,7 @@ license=('Apache')
 depends=('java-runtime-headless>=8')
 source=("https://github.com/VirtusLab/scala-cli/releases/download/v$pkgver/scala-cli-x86_64-pc-linux.gz")
 sha256sums=('d27fdc4796e0d8505721f69794a58b84a9077349a28f45aed60c9e703461401c')
+options=(!strip)
 
 package() {
   install -Dm755 "$srcdir/scala-cli-x86_64-pc-linux" "$pkgdir/usr/bin/scala-cli"
