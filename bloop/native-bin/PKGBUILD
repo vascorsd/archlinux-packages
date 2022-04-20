@@ -1,6 +1,6 @@
 pkgname=bloop-native-bin
 pkgver=1.4.13
-pkgrel=1
+pkgrel=3
 pkgdesc="Bloop gives you fast edit/compile/test workflows for Scala. (native pre-compiled binary)"
 arch=("x86_64")
 url="https://scalacenter.github.io/bloop/"
@@ -43,7 +43,7 @@ package() {
   install -Dm755 bloop "$pkgdir"/usr/bin/bloop
 
   # shell completion
-  install -Dm644 bash-completions "$pkgdir"/etc/bash_completion.d/bloop
+  install -Dm644 bash-completions "$pkgdir"/usr/share/bash-completion/completions/bloop
   install -Dm644 zsh-completions "$pkgdir"/usr/share/zsh/site-functions/_bloop
   install -Dm644 fish-completions "$pkgdir"/usr/share/fish/vendor_completions.d/bloop.fish
 
