@@ -1,5 +1,5 @@
 pkgname=scalafix-jvm-bin
-pkgver=0.9.34
+pkgver=0.10.0
 pkgrel=1
 pkgdesc="Refactoring and linting tool for Scala. (jvm launcher version)"
 arch=('any')
