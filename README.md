@@ -80,5 +80,5 @@ But they may be a good base for others to edit for their usages.
 | scalafmt   |     ✅ (❌, ❌)          |      ✅ (❌, ❌)           |
 | scalafix   |     ✅ (❌, ❌)          |      ❌ (❌, ❌)           |
 | metals     |     ✅ (❌, ❌)          |      ❌ (❌, ❌)           |
-| seed       |     ✅ (✅, ❌)          |      ❌ (❌, ❌)           |
 | scala-cli  |     ❌ (❌, ❌)          |      ✅ (❌, ❌)           |
+| (A) ~seed~ |     ✅ (✅, ❌)          |      ❌ (❌, ❌)           |
