@@ -1,5 +1,5 @@
 pkgname=metals-jvm-bin
-pkgver=0.11.2
+pkgver=0.11.6
 pkgrel=1
 pkgdesc="Scala language server with rich IDE features. (jvm launcher version)"
 arch=('any')
@@ -15,7 +15,7 @@ build() {
     --java-opt -XX:+UseStringDeduplication  \
     --java-opt -Xss4m \
     --java-opt -Xms100m \
-    org.scalameta:metals_2.12:$pkgver \
+    org.scalameta:metals_2.13:$pkgver \
     -r bintray:scalacenter/releases \
     -f \
     -o "${srcdir}/metals" \
