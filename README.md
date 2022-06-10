@@ -4,9 +4,27 @@ Here be some end user tools / binaries used in scala ecosystem
 packaged in a way I like for usage in archlinux.
 
 
+### tools packaged here
+
+|   tool     |  jvm-bin (git, source)   |  native-bin (git, source)  |
+| ---------- | ------------------------ | -------------------------- |
+| coursier   |        ✔️ (○, ○)          |         ✔️ (○, ○)           |
+| bloop      |        ○ (○, ○)          |         ✔️ (○, ○)           |
+| scalafmt   |        ✔️ (○, ○)          |         ✔️ (○, ○)           |
+| scalafix   |        ✔️ (○, ○)          |         ○ (○, ○)           |
+| metals     |        ✔️ (○, ○)          |         ○ (○, ○)           |
+| scala-cli  |        ○ (○, ○)          |         ✔️ (○, ○)           |
+| (A) ~seed~ |        ✔️ (✔️, ○)          |         ○ (○, ○)           |
+
+**Legend**:
+(A) - Archived
+✔️ - tool available in this configuration
+○ - tool NOT available in this configuration
+
+
 ## why not use other already provided packages ?
 
-I'm weirdo and don't like what I see on other places.
+I want things done in a particular way and wasn't happy with the packaged I found.
 I want a clear distinction between jvm based binary "tools" / "launchers"
 on my day to day usage so I'm aware of it.
 Better yet i want to be allowed to have the both versions (jvm and native)
@@ -26,7 +44,7 @@ Since we have the amazing problem of people trying to release end user
 system tools which unfortunatly use the jvm but also the great effort
 to directly compile some of them into native binaries bypassing the need
 for the jvm, there comes the need to distinguish which version is being
-packaged here.
+packaged.
 
 I'm following the pattern of adding "-bin" to prebuilt binaries.
 
@@ -35,10 +53,10 @@ I'm following the pattern of adding "-bin" to prebuilt binaries.
 **Jvm prebuild binaries / classes / released** on maven or wtv and being
 wrapped in a launcher using coursier follow the pattern "tool-jvm-bin".
 
-In order for coexisting packages on the system, all the jvm prebuilt stuff
+In order for coexisting packages on the system, all the jvm stuff
 installs their binaries with the prefix "-jvm". For example, coursier
 from the "coursier-bin" is installed in the system as "coursier" and 
-the coursier form "coursier-jvm" is installed as "coursier-jvm".
+the coursier from "coursier-jvm" is installed as "coursier-jvm".
 
 Because of this both the packaged don't conflict with each other.
 
@@ -69,16 +87,3 @@ don't usually code on it much.
 
 But they may be a good base for others to edit for their usages.
 
-
-## available matrix
-
-
-|   tool     |  jvm-bin (git, source)   |  native-bin (git, source)  |
-| ---------- | ------------------------ | -------------------------- |
-| coursier   |     ✅ (❌, ❌)          |      ✅ (❌, ❌)           |
-| bloop      |     ❌ (❌, ❌)          |      ✅ (❌, ❌)           |
-| scalafmt   |     ✅ (❌, ❌)          |      ✅ (❌, ❌)           |
-| scalafix   |     ✅ (❌, ❌)          |      ❌ (❌, ❌)           |
-| metals     |     ✅ (❌, ❌)          |      ❌ (❌, ❌)           |
-| scala-cli  |     ❌ (❌, ❌)          |      ✅ (❌, ❌)           |
-| (A) ~seed~ |     ✅ (✅, ❌)          |      ❌ (❌, ❌)           |
