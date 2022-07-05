@@ -87,3 +87,12 @@ don't usually code on it much.
 
 But they may be a good base for others to edit for their usages.
 
+## repo
+
+Trying to make a repo here:
+
+````
+[vascorsd-repo]
+Server = https://vascorsd.keybase.pub/archlinux/repo
+SigLevel = Optional TrustAll
+```
