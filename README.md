@@ -1,25 +1,29 @@
 ## what's here ?
 
-Here be some end user tools / binaries used in scala ecosystem
-packaged in a way I like for usage in archlinux.
+Here be some end user tools / binaries used in scala ecosystem or somewhat related to 
+jvm stuff packaged in a way I like for usage in archlinux.
 
 
 ### tools packaged here
 
-|   tool     |  jvm-bin (git, source)   |  native-bin (git, source)  |
-| ---------- | ------------------------ | -------------------------- |
-| coursier   |        ✔️ (○, ○)          |         ✔️ (○, ○)           |
-| bloop      |        ○ (○, ○)          |         ✔️ (○, ○)           |
-| scalafmt   |        ✔️ (○, ○)          |         ✔️ (○, ○)           |
-| scalafix   |        ✔️ (○, ○)          |         ○ (○, ○)           |
-| metals     |        ✔️ (○, ○)          |         ○ (○, ○)           |
-| scala-cli  |        ○ (○, ○)          |         ✔️ (○, ○)           |
-| (A) ~seed~ |        ✔️ (✔️, ○)          |         ○ (○, ○)           |
+| tool      | jvm-bin (git, source) | native-bin (git, source) |
+|-----------|-----------------------|--------------------------|
+| coursier  | ✔️ (⭕, ⭕)            | ✔️ (⭕, ⭕)               |
+| bloop     | ⭕ (⭕, ⭕)            | ✔️ (⭕, ⭕)               |
+| scalafmt  | ✔️ (⭕, ⭕)            | ✔️ (⭕, ⭕)               |
+| scalafix  | ✔️ (⭕, ⭕)            | ⭕ (⭕, ⭕)               |
+| metals    | ✔️ (⭕, ⭕)            | ⭕ (⭕, ⭕)               |
+| scala-cli | ⭕ (⭕, ⭕)            | ✔️ (⭕, ⭕)               |
+| 📦 ~seed~ | ✔️ (✔️, ⭕)            | ⭕ (⭕, ⭕)               |
 
-**Legend**:
-(A) - Archived
-✔️ - tool available in this configuration
-○ - tool NOT available in this configuration
+#### other stuff that may not follow all the rules I describe here
+
+ * **flix** - the programming language - https://github.com/flix/flix
+
+**Legend**:  
+📦 - Archived  
+✔️ - tool available in this configuration  
+⭕ - tool NOT available in this configuration  
 
 
 ## why not use other already provided packages ?
@@ -95,4 +99,4 @@ Trying to make a repo here:
 [vascorsd-repo]
 Server = https://vascorsd.keybase.pub/archlinux/repo
 SigLevel = Optional TrustAll
-```
+````
