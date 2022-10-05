@@ -1,0 +1,14 @@
+pkgbase = scalafmt-native-bin
+	pkgdesc = code formatter for the Scala programming language. (native pre-compiled binary)
+	pkgver = 3.5.9
+	pkgrel = 1
+	url = https://scalameta.org/scalafmt/
+	arch = x86_64
+	license = Apache
+	provides = scalafmt
+	conflicts = scalafmt
+	options = !strip
+	source = https://github.com/scalameta/scalafmt/releases/download/v3.5.9/scalafmt-linux-musl
+	sha256sums = 7f93e309cb35b4da03674a305941bc21c8c1e108003e7f288814d99d8513dc57
+
+pkgname = scalafmt-native-bin

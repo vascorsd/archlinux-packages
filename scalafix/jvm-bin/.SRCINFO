@@ -1,0 +1,11 @@
+pkgbase = scalafix-jvm-bin
+	pkgdesc = Refactoring and linting tool for Scala. (jvm launcher version)
+	pkgver = 0.10.3
+	pkgrel = 1
+	url = https://scalacenter.github.io/scalafix
+	arch = any
+	license = BSD3
+	makedepends = coursier
+	depends = java-environment>=8
+
+pkgname = scalafix-jvm-bin
