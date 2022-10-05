@@ -1,0 +1,14 @@
+# ignore everything, since it's tiring controlling
+# each and every potential artifact from downloading that
+# each package build does.
+*
+
+# ensure these files which are the main things related to
+# building packages are allowed
+!.git*
+!.SRCINFO
+!PKGBUILD
+!*install
+
+# specific file to allow in this package
+bloop.service
