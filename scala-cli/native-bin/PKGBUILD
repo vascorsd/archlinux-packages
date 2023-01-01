@@ -1,10 +1,11 @@
 pkgname=scala-cli-native-bin
 pkgver=0.1.18
-pkgrel=2
+pkgrel=3
 pkgdesc='Scala CLI is a command-line tool to interact with the Scala language.'
 arch=('x86_64')
 url='https://scala-cli.virtuslab.org'
 license=('Apache')
+conflicts=('scala-cli')
 depends=('java-runtime-headless>=8')
 source=("https://github.com/VirtusLab/scala-cli/releases/download/v$pkgver/scala-cli-$arch-pc-linux.gz")
 sha256sums=('482d7886334aacdb1078d6458f8f96348d6780685c5eac9ebec1838803471ac1')
