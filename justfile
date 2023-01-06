@@ -1,9 +1,13 @@
+editor := env_var_or_default("EDITOR", "helix")
 
 _default:
   just --list
 
 edit:
-  helix {{ invocation_directory() }}/PKGBUILD
+  {{ editor }} {{ invocation_directory() }}/PKGBUILD
+
+generate-package:
+  cd {{ invocation_directory() }}; makepkg --clean --cleanbuild
 
 generate-srcinfo:
   cd {{ invocation_directory() }}; makepkg --printsrcinfo > .SRCINFO

@@ -96,7 +96,7 @@ But they may be a good base for others to edit for their usages.
 Trying to make a repo here:
 
 ````
-[vascorsd-repo]
-Server = https://vascorsd.keybase.pub/archlinux/repo
+[repo:~vascorsd]
+Server = https://repo.vascorsd.com
 SigLevel = Optional TrustAll
 ````
