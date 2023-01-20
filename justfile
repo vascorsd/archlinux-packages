@@ -1,19 +1,25 @@
-editor := env_var_or_default("EDITOR", "helix")
+editor := env_var("EDITOR")
+here := invocation_directory()
 
 _default:
   just --list
 
 edit:
-  {{ editor }} {{ invocation_directory() }}/PKGBUILD
+  cd {{ here }} && \
+    {{ editor }} PKGBUILD
 
-generate-package:
-  cd {{ invocation_directory() }}; makepkg --clean --cleanbuild
+generate-package *other-flags:
+  cd {{ here }} && \
+    makepkg --clean --cleanbuild {{ other-flags }}
 
 generate-srcinfo:
-  cd {{ invocation_directory() }}; makepkg --printsrcinfo > .SRCINFO
+  cd {{ here }} && \
+    makepkg --printsrcinfo > .SRCINFO
 
-generate-integrity:
-  cd {{ invocation_directory() }}; makepkg --geninteg
+re-generate-integrity:
+  cd {{ here }} && \
+    updpkgsums
 
 add-to-repo:
-  cd {{ invocation_directory() }}; repoctl add -m *.pkg.tar.zst
+  cd {{ here }} && \
+    repoctl add -m *.pkg.tar.zst
