@@ -23,3 +23,7 @@ re-generate-integrity:
 add-to-repo:
   cd {{ here }} && \
     repoctl add -m *.pkg.tar.zst
+
+send-to-cloud:
+  rclone sync --progress --verbose --copy-links \
+    ~/shares/repo:~vascorsd fm.files:arch-repo

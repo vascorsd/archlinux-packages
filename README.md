@@ -1,38 +1,37 @@
 ## what's here ?
 
-Here be some end user tools / binaries used in scala ecosystem or somewhat related to 
+Here be stuff used in scala ecosystem or somewhat related to 
 jvm stuff packaged in a way I like for usage in archlinux.
 
 
-### tools packaged here
+### main packages
 
-| tool      | jvm-bin (git, source) | native-bin (git, source) |
-|-----------|-----------------------|--------------------------|
-| coursier  | ✔️ (⭕, ⭕)            | ✔️ (⭕, ⭕)               |
-| bloop     | ⭕ (⭕, ⭕)            | ✔️ (⭕, ⭕)               |
-| scalafmt  | ✔️ (⭕, ⭕)            | ✔️ (⭕, ⭕)               |
-| scalafix  | ✔️ (⭕, ⭕)            | ⭕ (⭕, ⭕)               |
-| metals    | ✔️ (⭕, ⭕)            | ⭕ (⭕, ⭕)               |
-| scala-cli | ⭕ (⭕, ⭕)            | ✔️ (⭕, ⭕)               |
-| 📦 ~seed~ | ✔️ (✔️, ⭕)            | ⭕ (⭕, ⭕)               |
-
-#### other stuff that may not follow all the rules I describe here
-
- * **flix** - the programming language - https://github.com/flix/flix
+| tool      | jvm-bin  | native-bin  |
+|-----------|----------|-------------|
+| coursier  | ✔️        | ✔️           |
+| bloop     | ⭕       | ✔️           |
+| scalafmt  | ✔️        | ✔️           |
+| scalafix  | ✔️        | ⭕          |
+| metals    | ✔️        | ⭕          |
+| scala-cli | ⭕       | ✔️           |
 
 **Legend**:  
-📦 - Archived  
 ✔️ - tool available in this configuration  
 ⭕ - tool NOT available in this configuration  
 
 
+#### other stuff
+
+ * **flix** - the programming language - https://github.com/flix/flix
+
+
 ## why not use other already provided packages ?
 
-I want things done in a particular way and wasn't happy with the packaged I found.
-I want a clear distinction between jvm based binary "tools" / "launchers"
-on my day to day usage so I'm aware of it.
-Better yet i want to be allowed to have the both versions (jvm and native)
-if available installed since some work better in one way or another.
+ - I wanted to learn how to properly package and maintain archlinux stuff, still learning.
+ - I'm particular about how some things should be packaged.
+ - I want a clear distinction between tool packaged using jvm and native binaries.
+ - I want both jvm and native binaries to coexist installed at the same time in the machine.
+
 For example coursier had very different behaviours for a while, so
 being able to have both installed and manually choose which fits better
 which situation is better.
@@ -62,20 +61,11 @@ installs their binaries with the prefix "-jvm". For example, coursier
 from the "coursier-bin" is installed in the system as "coursier" and 
 the coursier from "coursier-jvm" is installed as "coursier-jvm".
 
-Because of this both the packaged don't conflict with each other.
+Because of this both packages don't conflict with each other.
 
 I had the idea of also having the tools package by directly compiling
 them with sbt, but that seems a huge endeavour and I didn't get to it.
 But for those they would be named without the prefix "-bin".
-
-There are also a "-git" package for some (example seed) which following
-normal archlinux packaging naming would mean they are getting unstable
-versions based on updated git commits.
-
-For seed in particular there exists the one named "seed-jvm-bin-git"
-which following the huge book I just wrote means that it is getting a
-prebuild jvm binary based on unreleased version. (makes sense if a CI
-is building and publishing the built stuff on every commit for example).
 
 
 ## so, do you keep this updated ?
@@ -91,9 +81,10 @@ don't usually code on it much.
 
 But they may be a good base for others to edit for their usages.
 
+
 ## repo
 
-Trying to make a repo here:
+Sometimes I sync things here:
 
 ````
 [repo:~vascorsd]
