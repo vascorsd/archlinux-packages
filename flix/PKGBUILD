@@ -1,5 +1,5 @@
 pkgname=flix
-pkgver=0.34.0
+pkgver=0.37.0
 pkgrel=1
 pkgdesc="Flix programming language"
 arch=("any")
@@ -7,13 +7,13 @@ url="https://flix.dev/"
 license=('Apache')
 depends=('java-environment>=11')
 source=(
-    "flix.jar::https://github.com/flix/flix/releases/download/v${pkgver}/flix.jar"
+    "flix-$pkgver.jar::https://github.com/flix/flix/releases/download/v${pkgver}/flix.jar"
     "launch-script.sh"
 )
-sha256sums=('90f88defb22bda9fd66f453c97f98c119feaa174ec3dcdac63d1b6091f7f6fba'
+sha256sums=('ec79f2f18ef8221a6db68e0b92f00d4ad500c01401acd9708d0e4fa81c2c6d6d'
             'SKIP')
 
 package() {
   install -Dm755 "${srcdir}/launch-script.sh" "${pkgdir}/usr/bin/flix"
-  install -Dm644 "${srcdir}/flix.jar" "${pkgdir}/usr/share/java/flix/flix.jar"
+  install -Dm644 "${srcdir}/flix-$pkgver.jar" "${pkgdir}/usr/share/java/flix/flix.jar"
 }
