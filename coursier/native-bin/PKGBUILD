@@ -1,6 +1,6 @@
 pkgname=coursier-native-bin
-pkgver=2.0.16
-pkgrel=1
+pkgver=2.1.4
+pkgrel=2
 pkgdesc="Pure Scala Artifact Fetching. (native pre-compiled binary)"
 arch=("x86_64")
 url="http://get-coursier.io"
@@ -8,19 +8,10 @@ license=('Apache')
 provides=('coursier')
 conflicts=('coursier')
 source=(
-    "cs::https://github.com/coursier/coursier/releases/download/v${pkgver}/cs-${arch}-pc-linux"
-    "cs.asc::https://github.com/coursier/coursier/releases/download/v${pkgver}/cs-${arch}-pc-linux.asc"
+    "cs-$pkgver.gz::https://github.com/coursier/coursier/releases/download/v${pkgver}/cs-${arch}-pc-linux.gz"
 )
-sha256sums=(
-    'f8bfa6de98a864189f5a5799886d1295dd02b92e64bf10f194670538b9955016'
-    '5411610d7def621c874285034eaa8a4e076f53f3608bcb442307595c34e27959'
-)
-# https://keyserver.ubuntu.com/pks/lookup?search=0x8011fd49dc1749cd64137af3cd1b9d8dc84eca56&fingerprint=on&exact=on&op=index
-# gpg --keyserver keyserver.ubuntu.com --receive-keys 8011fd49dc1749cd64137af3cd1b9d8dc84eca56
-validpgpkeys=(
-  '8011FD49DC1749CD64137AF3CD1B9D8DC84ECA56'  # Alexandre Archambault ( Travis CI coursier )
-)
+sha256sums=('da0ed7882f8a902a8f15c710615b968fa262cb72631dee6b4ee2070dab3307fb')
 
 package() {
-  install -D -m755 "${srcdir}/cs" "${pkgdir}/usr/bin/coursier"
+  install -D -m755 "${srcdir}/cs-$pkgver" "${pkgdir}/usr/bin/coursier"
 }
