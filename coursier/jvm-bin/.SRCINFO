@@ -1,0 +1,14 @@
+pkgbase = coursier-jvm-bin
+	pkgdesc = Pure Scala Artifact Fetching. (jvm launcher version)
+	pkgver = 2.1.4
+	pkgrel = 1
+	url = http://get-coursier.io
+	arch = any
+	license = Apache
+	depends = java-environment>=8
+	depends = bash
+	noextract = builder-2.1.4
+	source = builder-2.1.4::https://github.com/coursier/coursier/releases/download/v2.1.4/coursier
+	sha256sums = 8bfcff22e4b1bcb0c127d4191ae228ddbdc8645cbf279e6611b65fb56c859f3f
+
+pkgname = coursier-jvm-bin
