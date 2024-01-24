@@ -1,5 +1,5 @@
 pkgname=scala-cli-native-bin
-pkgver=0.1.20
+pkgver=1.1.2
 pkgrel=1
 pkgdesc='Scala CLI is a command-line tool to interact with the Scala language.'
 arch=('x86_64')
@@ -8,7 +8,7 @@ license=('Apache')
 conflicts=('scala-cli')
 depends=('java-runtime-headless>=8')
 source=("scala-cli-$pkgver.gz::https://github.com/VirtusLab/scala-cli/releases/download/v$pkgver/scala-cli-$arch-pc-linux.gz")
-sha256sums=('7a123a8117c76d0c118d823cf0e6d617d2a990ff209349574dd7d844619fa328')
+sha256sums=('c341278c9ceab5554431928cd50067fcbfbff335695b78c862dcd0a4c1fe0dce')
 options=(!strip)
 noextract=("scala-cli-$pkgver.gz")
 
