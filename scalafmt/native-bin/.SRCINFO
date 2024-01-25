@@ -1,6 +1,6 @@
 pkgbase = scalafmt-native-bin
 	pkgdesc = code formatter for the Scala programming language. (native pre-compiled binary)
-	pkgver = 3.7.4
+	pkgver = 3.7.17
 	pkgrel = 1
 	url = https://scalameta.org/scalafmt/
 	arch = x86_64
@@ -8,7 +8,7 @@ pkgbase = scalafmt-native-bin
 	provides = scalafmt
 	conflicts = scalafmt
 	options = !strip
-	source = scalafmt-3.7.4::https://github.com/scalameta/scalafmt/releases/download/v3.7.4/scalafmt-linux-musl
-	sha256sums = ce55d23a4c30e85efe9de80f7ca0c6c19ec1cafd75e4333d77ce9c7c382740f2
+	source = scalafmt-3.7.17::https://github.com/scalameta/scalafmt/releases/download/v3.7.17/scalafmt-linux-musl
+	sha256sums = f7e43d8ccfe05d7cde5fa2187302ed63dcd3b26630b09ad62cc90405fc6242a8
 
 pkgname = scalafmt-native-bin
