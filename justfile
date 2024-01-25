@@ -27,3 +27,7 @@ add-to-repo:
 send-to-cloud:
   rclone sync --progress --verbose --copy-links \
     ~/shares/repo:~vascorsd fm.files:arch-repo
+
+clean:
+  cd {{ here }} && \
+    git clean -Xdf
