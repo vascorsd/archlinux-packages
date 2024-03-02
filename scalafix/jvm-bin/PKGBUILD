@@ -1,5 +1,5 @@
 pkgname=scalafix-jvm-bin
-pkgver=0.11.1
+pkgver=0.12.0
 pkgrel=1
 pkgdesc="Refactoring and linting tool for Scala. (jvm launcher version)"
 arch=('any')
@@ -10,7 +10,7 @@ makedepends=('coursier')
 
 build() {
   coursier \
-    bootstrap ch.epfl.scala:scalafix-cli_2.13.12:$pkgver \
+    bootstrap ch.epfl.scala:scalafix-cli_2.13.13:$pkgver \
     -f --main "scalafix.cli.Cli" \
     -o "${srcdir}/scalafix" \
     --standalone
