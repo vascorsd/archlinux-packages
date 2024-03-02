@@ -1,5 +1,5 @@
 pkgname=bloop-native-bin
-pkgver=1.5.13
+pkgver=1.5.15
 pkgrel=1
 pkgdesc="Bloop gives you fast edit/compile/test workflows for Scala. (native pre-compiled binary)"
 arch=("x86_64")
@@ -23,7 +23,7 @@ source=(
     # moved to be inline here
     "bloop.service"
 )
-sha256sums=('3a03a4910daebf5fe6bad95a8df9db29ef5852d5828a56a259e7fa7d9ee6d109'
+sha256sums=('6c2e37181206c5e952c7ef88d4494f77cb70aebe670da6470b61b4382b31e714'
             'da6b7ecd4109bd0ff98b1c452d9dd9d26eee0d28ff604f6c83fb8d3236a6bdd1'
             '78511247a88f1d10d5886bfe164dec0af3e0540864d8bd60086e0b9df5cefefe'
             '58d32c3f005f7791237916d1b5cd3a942115236155a0b7eba8bf36391d06eff7'
