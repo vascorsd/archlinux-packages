@@ -1,13 +1,13 @@
 pkgbase = coursier-native-bin
 	pkgdesc = Pure Scala Artifact Fetching. (native pre-compiled binary)
-	pkgver = 2.1.8
+	pkgver = 2.1.9
 	pkgrel = 1
 	url = http://get-coursier.io
 	arch = x86_64
 	license = Apache
 	provides = coursier
 	conflicts = coursier
-	source = cs-2.1.8.gz::https://github.com/coursier/coursier/releases/download/v2.1.8/cs-x86_64-pc-linux.gz
-	sha256sums = ae981dc39598751bab77fc38a963caaf7812aa54277b3797b7c0877969a62c7f
+	source = cs-2.1.9.gz::https://github.com/coursier/coursier/releases/download/v2.1.9/cs-x86_64-pc-linux.gz
+	sha256sums = ed3776eeb94be75e151b7e503ae621dea7de54a072a052e6b623626700733eae
 
 pkgname = coursier-native-bin
