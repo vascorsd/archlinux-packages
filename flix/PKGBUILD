@@ -1,5 +1,5 @@
 pkgname=flix
-pkgver=0.43.0
+pkgver=0.44.0
 pkgrel=1
 pkgdesc="Flix programming language"
 arch=("any")
@@ -10,7 +10,7 @@ source=(
     "flix-$pkgver.jar::https://github.com/flix/flix/releases/download/v${pkgver}/flix.jar"
     "launch-script.sh"
 )
-sha256sums=('a714ecbc3ccea5d4d9a934f3f9e47eb5d2cc1f66f2fa0006e887cd76300c4a9f'
+sha256sums=('a2ca14574e5ed4c08ab38d63d1d348262fb47bb5fe8078b381949689c209ebbf'
             '56fac2ef54fca2b3dc414bd4fbd4939596b91d0635cf3bde1871328d235dfb52')
 
 package() {
