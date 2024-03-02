@@ -1,5 +1,5 @@
 pkgname=metals-jvm-bin
-pkgver=1.2.0
+pkgver=1.2.2
 pkgrel=1
 pkgdesc="Scala language server with rich IDE features. (jvm launcher version)"
 arch=('any')
