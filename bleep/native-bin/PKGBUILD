@@ -1,0 +1,25 @@
+pkgname=bleep-bin
+pkgver=0.0.3
+pkgrel=1
+pkgdesc="Blazing fast scala build tool (pre-compiled binary)"
+arch=("x86_64")
+url="https://bleep.build"
+license=('MIT')
+provides=('bleep')
+conflicts=('bleep')
+makedepends=('coursier')
+
+
+build() {
+  coursier \
+    install \
+    --only-prebuilt \
+    --channel https://github.com/oyvindberg/bleep/blob/v$pkgver/coursier-channel.json \
+    bleep \
+    --install-dir "${srcdir}"
+}
+
+package() {
+  install -Dm755 "${srcdir}/bleep" "${pkgdir}/usr/bin/bleep"
+} 
+

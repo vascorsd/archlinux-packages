@@ -14,6 +14,7 @@ jvm stuff packaged in a way I like for usage in archlinux.
 | scalafix  | ✔️        | ⭕          |
 | metals    | ✔️        | ⭕          |
 | scala-cli | ⭕       | ✔️           |
+| bleep     | ⭕       | ✔️           |
 
 **Legend**:  
 ✔️ - tool available in this configuration  
