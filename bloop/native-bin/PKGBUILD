@@ -1,5 +1,5 @@
 pkgname=bloop-native-bin
-pkgver=1.5.15
+pkgver=1.5.17
 pkgrel=1
 pkgdesc="Bloop gives you fast edit/compile/test workflows for Scala. (native pre-compiled binary)"
 arch=("x86_64")
