@@ -1,11 +1,11 @@
 pkgname=metals-jvm-bin
-pkgver=1.2.2
+pkgver=1.3.0
 pkgrel=1
 pkgdesc="Scala language server with rich IDE features. (jvm launcher version)"
 arch=('any')
 url="https://scalameta.org/metals/"
 license=('Apache')
-depends=('java-environment>=8')
+depends=('java-environment>=11')
 makedepends=('coursier')
 
 build() {

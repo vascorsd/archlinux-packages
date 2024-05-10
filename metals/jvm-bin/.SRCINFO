@@ -1,11 +1,11 @@
 pkgbase = metals-jvm-bin
 	pkgdesc = Scala language server with rich IDE features. (jvm launcher version)
-	pkgver = 1.2.2
+	pkgver = 1.3.0
 	pkgrel = 1
 	url = https://scalameta.org/metals/
 	arch = any
 	license = Apache
 	makedepends = coursier
-	depends = java-environment>=8
+	depends = java-environment>=11
 
 pkgname = metals-jvm-bin
