@@ -1,14 +1,14 @@
 pkgbase = flix
 	pkgdesc = Flix programming language
-	pkgver = 0.44.0
+	pkgver = 0.46.0
 	pkgrel = 1
 	url = https://flix.dev/
 	arch = any
 	license = Apache
 	depends = java-environment>=21
-	source = flix-0.44.0.jar::https://github.com/flix/flix/releases/download/v0.44.0/flix.jar
+	source = flix-0.46.0.jar::https://github.com/flix/flix/releases/download/v0.46.0/flix.jar
 	source = launch-script.sh
-	sha256sums = a2ca14574e5ed4c08ab38d63d1d348262fb47bb5fe8078b381949689c209ebbf
+	sha256sums = 8e3f21df442c205e4796e9eba9492d1d8e9b094abd80c35594056c007d05d14d
 	sha256sums = 56fac2ef54fca2b3dc414bd4fbd4939596b91d0635cf3bde1871328d235dfb52
 
 pkgname = flix
