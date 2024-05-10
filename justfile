@@ -16,11 +16,11 @@ generate-srcinfo:
   cd {{ here }} && \
     makepkg --printsrcinfo > .SRCINFO
 
-re-generate-integrity:
+generate-integrity:
   cd {{ here }} && \
     updpkgsums
 
-add-to-repo:
+add-to-local-repo:
   cd {{ here }} && \
     repoctl add -m *.pkg.tar.zst
 
