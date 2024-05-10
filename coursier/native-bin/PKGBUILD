@@ -1,5 +1,5 @@
 pkgname=coursier-native-bin
-pkgver=2.1.9
+pkgver=2.1.10
 pkgrel=1
 pkgdesc="Pure Scala Artifact Fetching. (native pre-compiled binary)"
 arch=("x86_64")
@@ -10,7 +10,7 @@ conflicts=('coursier')
 source=(
     "cs-$pkgver.gz::https://github.com/coursier/coursier/releases/download/v${pkgver}/cs-${arch}-pc-linux.gz"
 )
-sha256sums=('ed3776eeb94be75e151b7e503ae621dea7de54a072a052e6b623626700733eae')
+sha256sums=('93933cb51cfc86074d78f70f15b0f70dd0be5f5306d6a9edb87640671850e863')
 
 package() {
   install -D -m755 "${srcdir}/cs-$pkgver" "${pkgdir}/usr/bin/coursier"
